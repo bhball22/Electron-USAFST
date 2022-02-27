@@ -5,8 +5,30 @@
         <meta name="viewport" content="width=device-width" inital-scale="1.0">
         <meta http-equiv="X-UA-Compatable" content="ie=edge">
         <title>USAF Visual Trainer</title>
+        <script defer src="../src/render.js"></script>
+        <link rel="stylesheet" href="index.css">
+    
     </head>
     <body>
-        <h1>Hello World</h1>
+        <div class="navbar">
+            <h1>View</h1>
+            <button id="view4" onClick="radarView()">Radar Controlls</button>
+            <button id="view3" onClick="systemView()">System Information</button>
+            <button id="view2" onClick="flightView()">Flight Display</button>
+            <button id="view1" onClick="navigationView()">Navigation Controlls</button>
+            <button id="view0" onClick="wideView()">Wide View</button>
+            <h1>Zoom</h1>
+            <div id="zoomSlider" class="slidecontainer">
+                <input type="range" min="100" max="300" value="150" class="slider" id="myRange" oninput="onZoomChange(this.value)">
+            </div>
+            <h1>Preview</h1>
+            <button>Small</button>
+            <button>Medium</button>
+            <button>Large</button>
+            <button>External</button>
+        </div>
+        <div  class="viewport">
+            <img id="cockpitPhoto" src="../resources/T1_Instrument_Panel2011.png">
+        </div>
     </body>
 </html>
