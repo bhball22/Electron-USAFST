@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "main.js",
     "devDependencies": {
-        "electron": "^17.0.0"
+        "electron": "^17.0.1"
     },
     "scripts": {
         "start": "electron ."
