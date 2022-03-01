@@ -1,0 +1,22 @@
+
+.navbar {
+    overflow: hidden;
+    background-color: #1c2224;
+    position:fixed;
+    top:0;
+    left:0px;
+    text-align: center;
+    width: 200px;
+    height:100%;
+}
+#cockpitPhoto {
+    text-align:center;
+    width:100%;
+}
+h1{
+    color: white;
+}
+.viewport{
+    margin-left:200px;
+    text-align: center;
+}
