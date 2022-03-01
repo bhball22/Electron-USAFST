@@ -2,15 +2,52 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="styles.css">
-        <link rel="form" href="form.html">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width" inital-scale="1.0">
         <meta http-equiv="X-UA-Compatable" content="ie=edge">
         <title>USAF Visual Trainer</title>
     </head>
-    
+    <style>
+        .container {
+          position: relative;
+          width: 100%;
+          max-width: 400px;
+        }
+        
+        .container img {
+          width: 100%;
+          height: auto;
+        }
+        
+        .container .btn {
+          position: absolute;
+          top: 70%;
+          left: 30%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          background-color: transparent;
+          color: transparent;
+          font-size: 16px;
+          padding: 16px 30px;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+          text-align: center;
+        }
+        
+        .container .btn:hover {
+          background-color: transparent;
+          color: transparent
+        }
+        </style>    
     <body>
-       <img src ="T1_Instrument_Panel2011.png" width:500, height:500 >
-       <button>hi</button>
+        <div class="container">
+            <img src ="T1_Instrument_Panel2011.png" width:500, height:500 >
+            <button onclick="wheelFunction()" class="btn">Button</button>
     </body>
+    <script>
+      function wheelFunction(){
+       console.log("Wheel");
+      }
+    </script>
 </html>
