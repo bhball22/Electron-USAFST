@@ -1,22 +1,13 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-.navbar {
-    overflow: hidden;
-    background-color: #1c2224;
-    position:fixed;
-    top:0;
-    left:0px;
-    text-align: center;
-    width: 200px;
-    height:100%;
-}
-#cockpitPhoto {
-    text-align:center;
-    width:100%;
-}
-h1{
-    color: white;
-}
-.viewport{
-    margin-left:200px;
-    text-align: center;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
