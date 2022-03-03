@@ -1,4 +1,18 @@
-#Viewport{
-    margin-left:200px;
+.ViewPort{
+        margin-left:200px;
+        margin-top:20px;
+        display:grid;
+        justify-content: center;
+        /*width:max-content;*/
+}
+.NavBar{
+    overflow: hidden;
+    background-color: #1c2224;
+    position:fixed;
+    top:0;
+    left:0px;
     text-align: center;
+    width: 200px;
+    height:100%;
+    z-index: 5;
 }
