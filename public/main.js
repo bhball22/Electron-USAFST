@@ -1,18 +1,21 @@
 const { app, BrowserWindow } = require('electron')
 const find = require('find-process');
+const path = require('path');
 
 function createWindow () {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    show:false,
-    icon: __dirname + `Logo2.ico`,
+    //show:false,
+    frame: false,
     webPreferences: {
-      nodeIntegration: true,
-      //preload: path.join(__dirname,"preload.js")
+       nodeIntegration: true,
+       contextIsolation: false,
+       enableRemoteModule: true,
     }
   })
+
 
   win.once('ready-to-show',() =>{
     win.show()
@@ -24,13 +27,14 @@ function createWindow () {
   // Open the DevTools.
   win.webContents.openDevTools()
 
-  win.removeMenu();
+  //win.removeMenu();
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(createWindow);
+  app.whenReady().then(createWindow);
+
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
@@ -54,7 +58,7 @@ app.on('activate', () => {
 // code. You can also put them in separate files and require them here.
 
 //!!!Need To Fix Before Prod!!!
-app.on('before-quit' , (e) => {
+/*app.on('before-quit' , (e) => {
   find('port', 3000).then(function (list) {
     console.log(list);
     if(!list.length){
@@ -64,5 +68,5 @@ app.on('before-quit' , (e) => {
       console.log(e.stack || e);
   }));
 });
-
+*/
 app.commandLine.appendSwitch('auto-detect','false');
