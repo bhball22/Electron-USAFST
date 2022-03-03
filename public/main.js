@@ -6,9 +6,16 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    show:false,
+    icon: __dirname + `Logo2.ico`,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      //preload: path.join(__dirname,"preload.js")
     }
+  })
+
+  win.once('ready-to-show',() =>{
+    win.show()
   })
 
   //load the index.html from a url
