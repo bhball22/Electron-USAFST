@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Electron-USAFST
+Electron framework GUI for USAF Schematic Training on the T-1 for pilots and trainers.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dev Notes
+Ignore node_modules and package-lock.json
+Html files, images ect. should be in the src folder
+JS Files can be in the main folder or src depending on scope
+npm run ohWhyGoD ( start program )
 
-## Available Scripts
+# Gettin-er Ready
+Requirement overview:
+Nodejs 16.13.x
+Npm 8.1.x
+VSCode 
+Github Desktop
 
-In the project directory, you can run:
+    Recommended Addons:
+        Prettier
+        Vscode-icons
+        Auto Rename Tag
+        HTML CSS Support
+        A Cool Color Theme for VS Code
 
-### `npm start`
+Installation Instructions:
+    Installing Nodejs - 10-20 min
+        https://nodejs.org/en/download/
+        We will be using the LTS v16.13-2
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1.Install Process is guided. Go ahead and install Chocolatey. It's ok if you don't but just do it.
+2. There will be multiple popups for Chocolatey install. Just Interact with them to complete it.
+3. Restart
+4. Open up a CMD and verify the installs by checking version
+node --version should be v16.13.x
+npm --version should be 8.1.x
+    Installing VS Code - 5 - 20 min
+        Windows - Mac: 
+Download here https://code.visualstudio.com/ Version does not matter as long as it is the right one for your OS
+        Linux:
+            This is more involved, just use atom
+2.Make sure Add to PATH & Register Code as an editor is checked when you get   to that point.
+3. Should be Good to go
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Installing Github Desktop - 5 min
+Download from https://desktop.github.com/
+Sign in
+Clone the Electron-USAFST repo
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Getting Started With The Project:
+1.Clone The Repository Onto your local drive
+2.Open The Project Folder In VS Code
+3.Open A local Terminal
+4.Run The Command npm install
+5.This should Install all programs in the npm module location
+Commands/Shortcuts
+Npm start - start the program
+Ctrl + C - close program (it will ask you if you want to just press y)
