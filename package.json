@@ -23,7 +23,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "dev": "nf start -p 3000"
+    "ohWhyGOD": "nf start -p 3000"
   },
   "eslintConfig": {
     "extends": [
