@@ -1,0 +1,21 @@
+.ViewPort{
+    margin-left: 10vw;
+    position: relative;
+    justify-content: center;
+    width: 89vw;
+    height: 97vh;
+    /*border-radius: 127px;*/
+    background: beige;
+}
+.NavBar{
+    padding-top: 2vh;
+    overflow: hidden;
+    background-color: #1c2224;
+    position:fixed;
+    top:0;
+    left:0px;
+    text-align: center;
+    width: 200px;
+    height:100%;
+    z-index: 5;
+}

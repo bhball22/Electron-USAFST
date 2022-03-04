@@ -1,0 +1,34 @@
+[
+  {
+   "name": "Master_LGEN",
+   "shape": "poly",
+   "coords": [
+    1519,
+    100,
+    1522,
+    188,
+    1560,
+    190,
+    1557,
+    98
+   ],
+   "preFillColor": "rgba(255,0,0,1)",
+   "fillColor": "rgba(0,0,100,0.5)"
+  },
+  {
+   "name": "Master_RGEN",
+   "shape": "poly",
+   "coords": [
+    1567,
+    101,
+    1564,
+    186,
+    1600,
+    186,
+    1599,
+    99
+   ],
+   "preFillColor": "rgba(255,0,0,1)",
+   "fillColor": "rgba(0,0,100,0.2)"
+  }
+ ]
