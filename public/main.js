@@ -1,21 +1,20 @@
-const { app, BrowserWindow } = require('electron')
-const find = require('find-process');
+const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
+const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main');
+setupTitlebar();
 
 function createWindow () {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    //show:false,
-    frame: false,
+    show:false,
+    frame:false,
     webPreferences: {
        nodeIntegration: true,
-       contextIsolation: false,
-       enableRemoteModule: true,
+       preload: path.join(__dirname, 'preload.js'),
     }
   })
-
 
   win.once('ready-to-show',() =>{
     win.show()
@@ -26,6 +25,9 @@ function createWindow () {
 
   // Open the DevTools.
   win.webContents.openDevTools()
+
+  const menu = null;
+  attachTitlebarToWindow(win);
 
   //win.removeMenu();
 }
@@ -58,7 +60,7 @@ app.on('activate', () => {
 // code. You can also put them in separate files and require them here.
 
 //!!!Need To Fix Before Prod!!!
-/*app.on('before-quit' , (e) => {
+app.on('before-quit' , (e) => {
   find('port', 3000).then(function (list) {
     console.log(list);
     if(!list.length){
@@ -68,5 +70,5 @@ app.on('activate', () => {
       console.log(e.stack || e);
   }));
 });
-*/
+
 app.commandLine.appendSwitch('auto-detect','false');
