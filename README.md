@@ -52,5 +52,5 @@ Getting Started With The Project:
 4.Run The Command npm install
 5.This should Install all programs in the npm module location
 Commands/Shortcuts
-Npm start - start the program
+Npm run ohWhyGod - start the program
 Ctrl + C - close program (it will ask you if you want to just press y)
