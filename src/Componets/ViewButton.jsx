@@ -5,7 +5,7 @@ const NavButton = (props) => {
 
     return(
         <div onClick={()=>{console.log("Ya Clicked a btn")}} className='Button'>
-            <p>{props.tag}</p>
+            <p style={{ userSelect: 'none'}}>{props.tag}</p>
         </div>
     )
 }

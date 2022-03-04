@@ -6,12 +6,10 @@ import area from '../Assets/MAP.json';
 
 const Mapper = (props) =>{
 
-  const [ WIDTH, setWidth] = useState((props.Zoom * 30) + 1000);
-  const [ HEIGHT, setHeight] = useState((WIDTH * (41/35)));
+  const [ WIDTH, setWidth] = useState((props.Zoom * 40) + 800);
 
   useEffect(()=>{
-    setWidth((props.Zoom * 40) + 1000)
-    setHeight(WIDTH * (41/35))
+    setWidth((props.Zoom * 40) + 800)
   })
 
   const URL = url;
@@ -20,7 +18,12 @@ const Mapper = (props) =>{
       areas: area,
     }
     return (
-        <ImageMapper 
+      <div id='map-container' style={{ 
+        position: "fixed",
+        left: `${props.posy}vw`,
+        top: `${props.posx}vh`,
+      }}>
+ <ImageMapper
         src = {URL} 
         map = {MAP} 
         imgWidth = {3500}
@@ -28,6 +31,8 @@ const Mapper = (props) =>{
         parentWidth = {WIDTH}
         onClick={(area) => { console.log(area.name)}}
         />
+      </div>
+
     );
 }
 

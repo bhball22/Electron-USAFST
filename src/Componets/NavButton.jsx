@@ -3,11 +3,16 @@ import "./Styles/Button.css"
 
 const NavButton = (props) => {
 
-    return(
-        <div onClick={()=>{console.log("Ya Clicked a btn")}} className='Button'>
-            <p>{props.tag}</p>
+    function Change(event) {
+        props.onChange();
+        console.log(props.tag)
+        };
+    
+        return(
+            <div onClick={(i)=>Change(i)} className='Button'>
+            <p style={{ userSelect: 'none'}}>{props.tag}</p>
         </div>
-    )
-}
+        )
+    }
 
 export default NavButton;

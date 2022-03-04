@@ -1,11 +1,14 @@
 .ViewPort{
-        margin-left:200px;
-        margin-top:20px;
-        display:grid;
-        justify-content: center;
-        /*width:max-content;*/
+    margin-left: 10vw;
+    position: relative;
+    justify-content: center;
+    width: 89vw;
+    height: 97vh;
+    /*border-radius: 127px;*/
+    background: beige;
 }
 .NavBar{
+    padding-top: 2vh;
     overflow: hidden;
     background-color: #1c2224;
     position:fixed;
