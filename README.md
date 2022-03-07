@@ -1,6 +1,8 @@
 # Electron-USAFST
 Electron framework GUI for USAF Schematic Training on the T-1 for pilots and trainers.
 
+![Logo4](https://user-images.githubusercontent.com/25287270/157114227-00b08d65-8869-4a5a-bf2c-042519ae27fe.png)
+
 # Dev Notes
 Ignore node_modules and package-lock.json<br>
 Html files, images ect. should be in the src folder<br>
