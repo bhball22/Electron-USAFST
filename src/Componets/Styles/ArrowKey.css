@@ -1,0 +1,34 @@
+.ArrowKey{
+    background:     transparent;
+    border-radius:  100px;
+    max-width:      0px;
+    padding:        0;
+    z-index:        5
+}
+
+.ArrowKey[id=UP]{
+    position:       fixed;
+    top:            -0.5%;
+    left:           60%;
+    transform:      rotate(90deg)
+}
+
+.ArrowKey[id=DOWN]{
+    position:       fixed;
+    bottom:         -2.5%;
+    left:           60%;
+    transform:      rotate(-90deg)
+}
+
+.ArrowKey[id=LEFT]{
+    position:       fixed;
+    bottom:         50%;
+    left:           16%;
+}
+
+.ArrowKey[id=RIGHT]{
+    position:       fixed;
+    bottom:         50%;
+    left:           98.5%;
+    transform:      rotate(180deg)
+}
