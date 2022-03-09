@@ -58,7 +58,7 @@ function App(props) {
             <ViewButton tag="Medium"/>
             <ViewButton tag="Large"/>
             <ViewButton tag="External"/>
-            <ScrollButton onChange={()=>setPosx(posx - 2)} tag="up"/>
+            <ScrollButton onChange={()=>setPosx(posx - 2)} tag="up"/>       {/* #FIXME: Issue #17 */}
             <ScrollButton onChange={()=>setPosx(posx + 2)} tag="Down"/>
             <ScrollButton onChange={()=>setPosy(posy - 2)} tag="Left"/>
             <ScrollButton onChange={()=>setPosy(posy + 2)} tag="Right"/>
