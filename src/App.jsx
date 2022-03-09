@@ -64,6 +64,7 @@ function App(props) {
             <ScrollButton onChange={()=>setPosy(posy + 2)} tag="Right"/>
         </div>
         <div className = "ViewPort">
+          <ScrollButton onChange={()=>setPosx(posx + 2)} tag="Move Up" direction="90deg"/> 
           <Mapper Zoom = {Zoom} posx = {posx} posy = {posy} id="mapper"/>
         </div>
         
