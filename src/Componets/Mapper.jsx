@@ -1,3 +1,4 @@
+import { Hidden } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import ImageMapper from 'react-img-mapper';
 import url from '../Assets/img.png';
@@ -22,6 +23,7 @@ const Mapper = (props) =>{
         position: "fixed",
         left: `${props.posy}vw`,
         top: `${props.posx}vh`,
+        'z-index': '2',
       }}>
  <ImageMapper
         src = {URL} 

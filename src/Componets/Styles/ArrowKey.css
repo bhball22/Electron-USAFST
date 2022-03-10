@@ -3,32 +3,32 @@
     border-radius:  100px;
     max-width:      0px;
     padding:        0;
-    z-index:        5
+    z-index:        3
 }
 
 .ArrowKey[id=UP]{
     position:       absolute;
-    top:            -1.5%;
+    top:            5px;
     left:           50%;
     transform:      rotate(90deg)
 }
 
 .ArrowKey[id=DOWN]{
     position:       absolute;
-    bottom:         -1.5%;
+    bottom:         5px;
     left:           50%;
     transform:      rotate(-90deg)
-}
-
-.ArrowKey[id=LEFT]{
-    position:       absolute;
-    bottom:         50%;
-    left:           3.5%;
 }
 
 .ArrowKey[id=RIGHT]{
     position:       absolute;
     bottom:         50%;
-    left:           99.5%;
+    right:          10px;
     transform:      rotate(180deg)
+}
+
+.ArrowKey[id=LEFT]{
+    position:       absolute;
+    bottom:         50%;
+    left:           10px
 }
