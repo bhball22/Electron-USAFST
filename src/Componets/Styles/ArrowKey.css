@@ -7,28 +7,28 @@
 }
 
 .ArrowKey[id=UP]{
-    position:       fixed;
-    top:            -0.5%;
-    left:           60%;
+    position:       absolute;
+    top:            -1.5%;
+    left:           50%;
     transform:      rotate(90deg)
 }
 
 .ArrowKey[id=DOWN]{
-    position:       fixed;
-    bottom:         -2.5%;
-    left:           60%;
+    position:       absolute;
+    bottom:         -1.5%;
+    left:           50%;
     transform:      rotate(-90deg)
 }
 
 .ArrowKey[id=LEFT]{
-    position:       fixed;
+    position:       absolute;
     bottom:         50%;
-    left:           16%;
+    left:           3.5%;
 }
 
 .ArrowKey[id=RIGHT]{
-    position:       fixed;
+    position:       absolute;
     bottom:         50%;
-    left:           98.5%;
+    left:           99.5%;
     transform:      rotate(180deg)
 }
