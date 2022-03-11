@@ -1,6 +1,7 @@
 .ViewPort{
-    margin-left: 10vw;
-    position: relative;
+    padding-left:200px;
+    overflow: hidden;
+    position: absolute;
     justify-content: center;
     width: 89vw;
     height: 97vh;
