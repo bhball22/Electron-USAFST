@@ -12,7 +12,7 @@
     1557,
     98
    ],
-   "preFillColor": "rgba(255,0,0,1)",
+   "preFillColor": "rgba(255,0,0,0)",
    "fillColor": "rgba(0,0,100,0.5)"
   },
   {
@@ -28,7 +28,201 @@
     1599,
     99
    ],
-   "preFillColor": "rgba(255,0,0,1)",
+   "preFillColor": "rgba(255,0,0,0)",
    "fillColor": "rgba(0,0,100,0.2)"
+  },
+  {
+   "//COMMENT": "Hydrolic System Beginning",
+   "name": "LH ENG FIRE PUSH",
+   "shape": "poly",
+   "coords": [
+    1842,
+    1355,
+    1910,
+    1355,
+    1911,
+    1400,
+    1842,
+    1401
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(159,5,0,0.5)"
+  },
+  {
+   "name": "RH ENG FIRE PUSH",
+   "shape": "poly",
+   "coords": [
+    1933,
+    1356,
+    1932,
+    1400,
+    2000,
+    1401,
+    2000,
+    1354
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(159,5,0,0.5)"
+  },
+  {
+   "name": "L H/V OPEN",
+   "shape": "poly",
+   "coords": [
+    1753,
+    1355,
+    1753,
+    1378,
+    1786,
+    1377,
+    1786,
+    1354
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(255,255,255,0.5)"
+  },
+  {
+   "name": "L H/V CLOSE",
+   "shape": "poly",
+   "coords": [
+    1754,
+    1380,
+    1786,
+    1380,
+    1786,
+    1401,
+    1754,
+    1402
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(176,188,0,0.5)"
+  },
+  {
+   "name": "R H/V CLOSE",
+   "shape": "poly",
+   "coords": [
+    2020,
+    1404,
+    2055,
+    1404,
+    2054,
+    1379,
+    2020,
+    1380
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(219,223,0,0.5)"
+  },
+  {
+   "name": "R H/V OPEN",
+   "shape": "poly",
+   "coords": [
+    2021,
+    1354,
+    2022,
+    1377,
+    2056,
+    1377,
+    2056,
+    1354
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(255,255,255,0.5)"
+  },
+  {
+   "name": "L O FLTR BYPASS L H PMP PRESS L O",
+   "shape": "poly",
+   "coords": [
+    1866,
+    1860,
+    1902,
+    1861,
+    1901,
+    1894,
+    1866,
+    1894
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(51,51,51,0.5)"
+  },
+  {
+   "name": "R O FLTR BYPASS R H PMP PRESS L O",
+   "shape": "poly",
+   "coords": [
+    1906,
+    1861,
+    1906,
+    1896,
+    1943,
+    1896,
+    1943,
+    1861
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(51,51,51,0.5)"
+  },
+   {
+   "name": "HYD LEVEL LO RUD BST FAIL",
+   "shape": "poly",
+   "coords": [
+    1907,
+    2100,
+    1906,
+    2136,
+    1941,
+    2136,
+    1943,
+    2099
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(51,51,51,0.5)"
+  },
+  {
+   "name": "Hydraulic Pressure Bypass Switch",
+   "shape": "poly",
+   "coords": [
+    1486,
+    2229,
+    1523,
+    2229,
+    1525,
+    2323,
+    1486,
+    2323
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(159,5,0,0.5)"
+  },
+   {
+   "name": "Hydraulic Pressure Gauge",
+   "shape": "poly",
+   "coords": [
+    1319,
+    2218,
+    1299,
+    2240,
+    1294,
+    2273,
+    1303,
+    2300,
+    1322,
+    2318,
+    1351,
+    2327,
+    1383,
+    2320,
+    1403,
+    2300,
+    1412,
+    2268,
+    1401,
+    2235,
+    1381,
+    2217,
+    1353,
+    2208
+   ],
+   "preFillColor": "rgba(255,0,0,0)",
+   "fillColor": "rgba(51,51,51,0.5)",
+   "//COMMENT": "Hydraulic System Ending"
   }
  ]
