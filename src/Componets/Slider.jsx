@@ -35,10 +35,11 @@ class SliderComponet extends Component {
           <Grid item>
           </Grid>
           <Grid item xs>
-            <Slider key={`slider-${this.value}`}
-            value={this.value} 
+          <Slider
+            value={this.value ?? 5} 
             onChange={this.changeZoom}
           />
+          
           </Grid>
           <Grid item>
           </Grid>

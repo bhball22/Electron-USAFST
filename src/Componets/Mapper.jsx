@@ -23,14 +23,15 @@ const Mapper = (props) =>{
         position: "fixed",
         left: `${props.posy}vw`,
         top: `${props.posx}vh`,
+        transform: `scale(${(props.Zoom * .05) + 1})`,
         'zindex': '2',
       }}>
  <ImageMapper
         src = {URL} 
         map = {MAP} 
         imgWidth = {3500}
-        responsive = {true}
-        parentWidth = {WIDTH}
+        //responsive = {true}
+        //parentWidth = {WIDTH}
         onClick={(area) => { console.log(area.name)}}
         />
       </div>
