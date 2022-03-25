@@ -8,3 +8,6 @@ window.addEventListener('DOMContentLoaded', () => {
     backgroundColor: Color.fromHex("#1c2224"),
     menu: null
   })})
+
+  let container = document.getElementById("cet-container");
+  container.style.overflow = "hidden";
