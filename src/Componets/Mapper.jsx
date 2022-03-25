@@ -23,7 +23,7 @@ const Mapper = (props) =>{
         position: "fixed",
         left: `${props.posy}vw`,
         top: `${props.posx}vh`,
-        'z-index': '2',
+        'zindex': '2',
       }}>
  <ImageMapper
         src = {URL} 
