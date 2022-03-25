@@ -9,5 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
     menu: null
   })})
 
-  let container = document.getElementById("cet-container");
-  container.style.overflow = "hidden";
+//Only Removes on Linux?
+let container = document.getElementById("cet-container");
+container.style.overflow = "hidden";
