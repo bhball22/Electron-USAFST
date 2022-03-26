@@ -61,10 +61,6 @@ function App(props) {
         </div>
         <div className = "ViewPort">
           <Mapper Zoom = {Zoom} posx = {posx} posy = {posy} id="mapper"/>
-          <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP'/>
-          <ScrollButton onChange={()=>setPosx(posx - 2)} id='DOWN'/>
-          <ScrollButton onChange={()=>setPosy(posy + 2)} id='LEFT'/>
-          <ScrollButton onChange={()=>setPosy(posy - 2)} id='RIGHT'/>
         </div>
         
     </div>
