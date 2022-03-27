@@ -1,0 +1,52 @@
+.button{
+    background-color: #1c2224;
+    width:200PX;
+    border: 3px;
+    border-color: #1c2224;
+    color: white;
+    padding: 15px 0px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+.button:hover{
+    background-color: #273135;
+    border-color:white;
+}
+
+h3{
+    color: white;
+    display: inline;
+}
+
+p{
+    user-select: none;
+}
+
+.grid-container-hydrolics{
+    display:grid;
+    grid-template-areas:
+        'Buttons Lights';
+    grid-gap: 10px;
+}
+
+
+#LV{
+    background-color: White;
+    color: #1c2224;
+}
+
+#LHENG{
+    background-color: rgb(49, 0, 0);
+}
+#RHENG{
+    background-color: rgb(49, 0, 0);
+}
+#RV{
+    background-color: White;
+    color: #1c2224;
+}
+
+#HYDP{
+    background-color: rgb(255, 139, 139);
+}

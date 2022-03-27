@@ -20,7 +20,7 @@ const Mapper = (props) =>{
     }
     return (
       <div id='map-container' style={{ 
-        position: "fixed",
+        position: "relative",
         left: `${props.posy}vw`,
         top: `${props.posx}vh`,
         'zindex': '2',

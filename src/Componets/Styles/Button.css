@@ -1,9 +1,10 @@
 .Button{
-    background-color: #1c2224; /* Green */
+    background-color: #1c2224;
+    width:200PX;
     border: 3px;
     border-color: #1c2224;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 0px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
