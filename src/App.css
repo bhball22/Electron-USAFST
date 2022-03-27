@@ -1,28 +1,65 @@
 .ViewPort{
-    padding-left:200px;
     overflow: hidden;
-    position: absolute;
-    justify-content: center;
-    width: 89vw;
+    justify-self:start;
+    width:100%;
     height: 97vh;
-    /*border-radius: 127px;*/
-    background: beige;
+    background: rgb(29, 29, 29);
+    grid-area: viewPort;
+    box-shadow: inset 0px 6px 10px black;
 }
 .NavBar{
     padding-top: 2vh;
     overflow: hidden;
     background-color: #1c2224;
-    position:fixed;
-    top:0;
-    left:0px;
     text-align: center;
     width: 200px;
-    height:100%;
-    z-index: 5;
+    grid-area: navBar;
+    z-index: 1;
+    height: 95vh;
+}
+
+.InteractivePane{
+    grid-area: interactivePane;
+    justify-self: end;
+    border-left: 10px;
+    border-left: 10px solid #1c2224;
+    height: 97vh;
+    overflow: scroll;
+}
+
+.grid-container{
+    grid-template-columns: auto minmax(0, 1fr);
+    display:grid;
+    grid-template-areas:
+        'navBar viewPort interactivePane'
+        'navBar viewPort interactivePane'
 }
 
 ::-webkit-scrollbar{
 
     display: none;
 
+}
+.button-grid-container{
+    padding-left:10px;
+    display:grid;
+    grid-template-areas:
+        '. up .'
+        'left down right'
+}
+
+#UP{
+    grid-area: up;
+}
+
+#LEFT{
+    grid-area: left;
+}
+
+#DOWN{
+    grid-area: down;
+}
+
+#RIGHT{
+    grid-area: right;
 }

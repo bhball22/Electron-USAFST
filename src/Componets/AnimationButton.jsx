@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Styles/Button.css"
 
-const NavButton = (props) => {
+const AnimationButton = (props) => {
 
     return(
         <div onClick={()=>{console.log("Ya Clicked a btn")}} className='Button'>
@@ -10,4 +10,4 @@ const NavButton = (props) => {
     )
 }
 
-export default NavButton;
+export default AnimationButton;

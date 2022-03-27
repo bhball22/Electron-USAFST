@@ -1,15 +1,15 @@
 import './App.css';
 import Mapper from './Componets/Mapper'
-import ViewButton from './Componets/ViewButton';
 import NavButton from './Componets/NavButton';
 import Slider from './Componets/Slider';
 import ScrollButton from './Componets/ScrollButton';
+import AnimationPane from './Componets/AnimationPane';
 import { useEffect,useState } from 'react';
 
 function App(props) {
   const [ Zoom, setZoom] = useState(1);
-  const [ posx, setPosx] = useState(6);
-  const [ posy, setPosy] = useState(30);
+  const [ posx, setPosx] = useState(0);
+  const [ posy, setPosy] = useState(0);
   
   const shouldRender = false;
 
@@ -46,7 +46,7 @@ function App(props) {
   })
 
   return (
-    <div className="App">
+    <div className="App grid-container">
         <div className="NavBar">
             <NavButton onChange={()=>setRadarView()}tag="Radar Controlls"/>
             <NavButton onChange={()=>setSystemView()}tag="System Information"/>
@@ -54,19 +54,20 @@ function App(props) {
             <NavButton onChange={()=>setNavView()}tag="Navigation Controlls"/>
             <NavButton onChange={()=>setWideView()}tag="Wide View"/>
             <Slider onSlider={(i)=>setZoom(i)}></Slider>
-            <ViewButton tag="Small"/>
-            <ViewButton tag="Medium"/>
-            <ViewButton tag="Large"/>
-            <ViewButton tag="External"/>
+            <div className="button-grid-container">
+              <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP' />
+              <ScrollButton onChange={()=>setPosx(posx - 2)} id='DOWN'/>
+              <ScrollButton onChange={()=>setPosy(posy + 2)} id='LEFT'/>
+              <ScrollButton onChange={()=>setPosy(posy - 2)} id='RIGHT'/>
+            </div>
         </div>
         <div className = "ViewPort">
           <Mapper Zoom = {Zoom} posx = {posx} posy = {posy} id="mapper"/>
-          <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP'/>
-          <ScrollButton onChange={()=>setPosx(posx - 2)} id='DOWN'/>
-          <ScrollButton onChange={()=>setPosy(posy + 2)} id='LEFT'/>
-          <ScrollButton onChange={()=>setPosy(posy - 2)} id='RIGHT'/>
+          
         </div>
-        
+        <div className='InteractivePane'>
+          <AnimationPane/>
+        </div>
     </div>
   );
 }
