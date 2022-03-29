@@ -47,7 +47,7 @@ JS Files can be in the main folder or src depending on scope<br>
 2. Open The Project Folder In VS Code
 3. Open A local Terminal
 4. Run The Command `npm install` (This should Install all programs in the npm module location)
-5. `Npm run Dev` - start the program
+5. `Npm run Dev` - start the program Note: If you make changes to react you do not need to restart the program. 
 6. Ctrl + C - close program (it will ask you if you want to just press y)
 
 ## Opening Branches
