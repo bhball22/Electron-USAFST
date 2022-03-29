@@ -66,7 +66,6 @@ class HydrolicSystem extends Component {
     updateSimCss() {
         let LV = document.getElementById("LV");
 
-        //This seems backwards but works?
         if(this.state.LHV === "Closed"){
             LV.style.backgroundColor = "yellow";
         }else{
@@ -83,7 +82,6 @@ class HydrolicSystem extends Component {
 
         let RV = document.getElementById("RV");
 
-        //This seems backwards but works?
         if(this.state.RHV === "Closed"){
             RV.style.backgroundColor = "yellow";
         }else{
