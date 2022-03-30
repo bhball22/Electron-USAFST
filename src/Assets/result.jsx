@@ -4,8 +4,8 @@ function Icon() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      id='svg384135'
-      height='100%'
+      id='HydrolicSystem'
+      height='80%'
       version='1.1'
       viewBox='0 0 255.215 269.683'
     >

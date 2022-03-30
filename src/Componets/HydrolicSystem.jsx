@@ -46,20 +46,20 @@ class HydrolicSystem extends Component {
 
     }
 
-    updateSimSVG(){
-        let LHV = document.getElementById("LHVValve");
-        let RHV = document.getElementById("RHVValve");
+    updateSimSVG(){ //The Id's Here are temp
+        let LHV = document.getElementById("path520918");
+        let RHV = document.getElementById("path520918-6");
 
         if(this.state.LHF || this.state.LHV === "Closed"){
-            LHV.style.fill = "red";
+            LHV.style.fill = "#ccc";
         }else{
-            LHV.style.fill = "yellow";
+            LHV.style.fill = "#deaa87";
         }
 
         if(this.state.RHF || this.state.RHV === "Closed"){
-            RHV.style.fill = "red";
+            RHV.style.fill = "#ccc";
         }else{
-            RHV.style.fill = "yellow";
+            RHV.style.fill = "#deaa87";
         }
     }
 
