@@ -19,10 +19,10 @@ class HydrolicSystem extends Component {
         //console.log(this.state); //Uncomment this Line to See the JSON of the state
         //console.log(event.target.id); //Uncomment this line to see what the json on the event is (tells ya what button pressed)
 
-        if(event.target.id === 'LV'){
+        if(event.target.id === 'LV'){ //ID: LV and LVENG both open and close the left valve.
            await this.setState({ LHV: this.state.LHV === "Open" ? "Closed" : "Open"});
         }
-        if(event.target.id === 'RV'){
+        if(event.target.id === 'RV'){ //ID: RV and RVENG both open and close the right valve.
            await this.setState({ RHV:this.state.RHV === "Open" ? "Closed" : "Open"});
         }
         if(event.target.id === 'LHENG'){
@@ -31,14 +31,26 @@ class HydrolicSystem extends Component {
         if(event.target.id === 'RHENG'){
           await  this.setState({ RHF:this.state.RHF === false ? true : false});
         }
-        if(event.target.id === 'HYDP'){
+        if(event.target.id === 'HYDP'){ // This opens the vavle at the bottom left release
           await  this.setState({ HydPress: this.state.HydPress === "Norm" ? "Rel" : "Norm"});
         }
 
         //Caculate PSI
-
+            //Pressure Relief Valve opens automatically if greater than 1650 PSI.
+            
+            //400 PSI Bright yellow (not working)
+            //1200 PSI - 1550 PSI Green (good window)
+            //greater than 1550 PSI gets Red until 1850 PSI which is solid Red
 
         //Calculate Lights
+            //Pressure Sensors in the center if each is less than 750 PSI they light up.
+            //HYD LEVEL LO lights up after less than or equal to 0.6 gallons remaining.
+
+        //Filter
+            //All filters can be bypassed by being clogged (accidental so selected)
+        
+        //Pumps
+            //Only run if the engine is running or the blades are spinning
 
 
         this.updateSimSVG();
