@@ -5,7 +5,7 @@ function Icon() {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       id='HydrolicSystem'
-      height='80%'
+      height='500px'
       version='1.1'
       viewBox='0 0 255.215 269.683'
     >

@@ -8,4 +8,5 @@
 
 .AnimationContainer{
     height:50%;
+    overflow: scroll;
 }

@@ -6,7 +6,7 @@ import { Switch } from '@mui/material'
 import NoninteractiveDiagramHydrolic from  "../Assets/hydrolics.png"
 
 const AnimationPane = (props) => {
-    const [displayType, setDisplayType] = useState(false);
+    const [displayType, setDisplayType] = useState(true);
 
     const handelChange = () => {
         setDisplayType(!displayType);
@@ -23,13 +23,13 @@ const AnimationPane = (props) => {
     
         return(
             <>
-                <div className="AnimationContainer grid-element">
+                <div className="AnimationContainer grid-element grid-container">
                     <Switch label ="Interactive Display"
                     checked = {displayType}
                     onChange={handelChange}
                     />
-                    <img id = "HydrolicPng" src={NoninteractiveDiagramHydrolic} alt="Static PNG" height="80%"/>
 
+                    <img id = "HydrolicPng" src={NoninteractiveDiagramHydrolic} alt="Static PNG" height="80%" style={{display:'none'}}/>
                     <InteractiveDiagramHydrolic/>
                 </div>
                 <div className="InfoProcessing grid-element">
