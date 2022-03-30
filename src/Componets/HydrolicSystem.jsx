@@ -59,22 +59,48 @@ class HydrolicSystem extends Component {
 
     updateSimSVG(){ //The Id's Here are temp
         let LHV = document.getElementById("path520918");
+        let PVPL = document.getElementById("Pump-Valve-Pipe-Left");
+        let PSFL = document.getElementById("PumpSensorFilterLeft");
+        let PFL = document.getElementById("PostFilterLeft");
         let RHV = document.getElementById("path520918-6");
+        let PVPR = document.getElementById("Pump-Valve-Pipe-Right");
+        let PSFR = document.getElementById("PumpSensorFilterRight");
+        let PFR = document.getElementById("PostFilterRight");
+        let OilO = document.getElementById("OilOut");
+        
 
         if(this.state.LHF || this.state.LHV === "Closed"){
             LHV.style.fill = "#565656";
             LHV.style.transform = "rotate(90deg) translate(610px,180px)";
+            PVPL.style.fill = "#565656";
+            PSFL.style.fill = "#565656";
+            PFL.style.fill = "#565656";
         }else{
             LHV.style.fill = "#deaa87";
             LHV.style.transform = "rotate(0deg)";
+            PVPL.style.fill = "#deaa87";
+            PSFL.style.fill = "#deaa87";
+            PFL.style.fill = "#deaa87";
         }
 
         if(this.state.RHF || this.state.RHV === "Closed"){
             RHV.style.fill = "#565656";
             RHV.style.transform = "rotate(90deg) translate(610px,180px)";
+            PVPR.style.fill = "#565656";
+            PSFR.style.fill = "#565656";
+            PFR.style.fill = "#565656";
         }else{
             RHV.style.fill = "#deaa87";
             RHV.style.transform = "rotate(0deg)";
+            PVPR.style.fill = "#deaa87";
+            PSFR.style.fill = "#deaa87";
+            PFR.style.fill = "#deaa87";
+        }
+
+        if(((this.state.LHF || this.state.LHV) && (this.state.RHF || this.state.RHV)) === "Closed"){
+            OilO.style.fill = "#565656";
+        }else{
+            OilO.style.fill = "#deaa87";
         }
     }
 
