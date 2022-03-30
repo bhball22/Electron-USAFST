@@ -3,7 +3,6 @@ import "./Styles/HydrolicSystem.css"
 import AnimationButton from './AnimationButton';
 
 
-
 class HydrolicSystem extends Component {
 
     constructor(props){
@@ -63,15 +62,19 @@ class HydrolicSystem extends Component {
         let RHV = document.getElementById("path520918-6");
 
         if(this.state.LHF || this.state.LHV === "Closed"){
-            LHV.style.fill = "#ccc";
+            LHV.style.fill = "#565656";
+            LHV.style.transform = "rotate(90deg) translate(610px,180px)";
         }else{
             LHV.style.fill = "#deaa87";
+            LHV.style.transform = "rotate(0deg)";
         }
 
         if(this.state.RHF || this.state.RHV === "Closed"){
-            RHV.style.fill = "#ccc";
+            RHV.style.fill = "#565656";
+            RHV.style.transform = "rotate(90deg) translate(610px,180px)";
         }else{
             RHV.style.fill = "#deaa87";
+            RHV.style.transform = "rotate(0deg)";
         }
     }
 
