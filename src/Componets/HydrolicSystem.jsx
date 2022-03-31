@@ -8,14 +8,14 @@ class HydrolicSystem extends Component {
     constructor(props){
         super(props);
         //Simulation Variables / Default values
-        this.state = {psi: '1500' ,LHV: "Open", RHV: "Open", LHF: false, RHF: false, HydPress:"Norm"};
+        this.state = {psi: 1860 , PsiColor: 'green',LHV: "Open", RHV: "Open", LHF: false, RHF: false, HydPress:"Norm"};
         this.handleChange = this.handleChange.bind(this);
         this.updateSimVariables = this.updateSimVariables.bind(this);
     }
 
 
     async updateSimVariables(event){
-        //console.log(this.state); //Uncomment this Line to See the JSON of the state
+        
         //console.log(event.target.id); //Uncomment this line to see what the json on the event is (tells ya what button pressed)
 
         if(event.target.id === 'LV'){ //ID: LV and LVENG both open and close the left valve.
@@ -26,14 +26,25 @@ class HydrolicSystem extends Component {
         }
         if(event.target.id === 'LHENG'){
            await this.setState({ LHF:this.state.LHF === false ? true : false});
+           await this.setState({ LHV: this.state.LHV === "Open" ? "Closed" : "Open"});
         }
         if(event.target.id === 'RHENG'){
           await  this.setState({ RHF:this.state.RHF === false ? true : false});
+          await this.setState({ RHV:this.state.RHV === "Open" ? "Closed" : "Open"});
         }
         if(event.target.id === 'HYDP'){ // This opens the vavle at the bottom left release
           await  this.setState({ HydPress: this.state.HydPress === "Norm" ? "Rel" : "Norm"});
         }
 
+        if(event.target.id === "psi"){
+          if(this.state.psi < 400){
+             this.state.PsiColor = 'Yellow';
+          }else if((this.state.psi >= 1200) && (this.state.psi <= 1550)){
+              this.state.PsiColor = 'Green';
+          }else if(this.state.psi > 1850){
+              this.state.PsiColor = 'Red';
+          }
+        }console.log(this.state); //Uncomment this Line to See the JSON of the state
         //Caculate PSI
             //Pressure Relief Valve opens automatically if greater than 1650 PSI.
             
@@ -67,40 +78,50 @@ class HydrolicSystem extends Component {
         let PSFR = document.getElementById("PumpSensorFilterRight");
         let PFR = document.getElementById("PostFilterRight");
         let OilO = document.getElementById("OilOut");
+        let ORM = document.getElementById("OilReturnMain");
+        let SB = document.getElementById("SystemBleed");
         
 
-        if(this.state.LHF || this.state.LHV === "Closed"){
+        if(this.state.LHV === "Closed"){
             LHV.style.fill = "#565656";
             LHV.style.transform = "rotate(90deg) translate(610px,180px)";
             PVPL.style.fill = "#565656";
             PSFL.style.fill = "#565656";
             PFL.style.fill = "#565656";
         }else{
-            LHV.style.fill = "#deaa87";
+            LHV.style.fill = this.state.PsiColor;
             LHV.style.transform = "rotate(0deg)";
-            PVPL.style.fill = "#deaa87";
-            PSFL.style.fill = "#deaa87";
-            PFL.style.fill = "#deaa87";
+            PVPL.style.fill = this.state.PsiColor;
+            PSFL.style.fill = this.state.PsiColor;
+            PFL.style.fill = this.state.PsiColor;
         }
 
-        if(this.state.RHF || this.state.RHV === "Closed"){
+        if(this.state.RHV === "Closed"){
             RHV.style.fill = "#565656";
             RHV.style.transform = "rotate(90deg) translate(610px,180px)";
             PVPR.style.fill = "#565656";
             PSFR.style.fill = "#565656";
             PFR.style.fill = "#565656";
         }else{
-            RHV.style.fill = "#deaa87";
+            RHV.style.fill = this.state.PsiColor;
             RHV.style.transform = "rotate(0deg)";
-            PVPR.style.fill = "#deaa87";
-            PSFR.style.fill = "#deaa87";
-            PFR.style.fill = "#deaa87";
+            PVPR.style.fill = this.state.PsiColor;
+            PSFR.style.fill = this.state.PsiColor;
+            PFR.style.fill = this.state.PsiColor;
         }
 
-        if(((this.state.LHF || this.state.LHV) && (this.state.RHF || this.state.RHV)) === "Closed"){
+        if(this.state.LHV === "Closed" && this.state.RHV === "Closed"){
             OilO.style.fill = "#565656";
         }else{
-            OilO.style.fill = "#deaa87";
+            OilO.style.fill = this.state.PsiColor;
+        }
+
+        if((this.state.HydPress === "Rel") && (this.state.LHV === "Open" || this.state.RHV ==="Open")){
+            ORM.style.fill = this.state.PsiColor;
+            SB.style.fill = this.state.PsiColor;
+        }else{
+            ORM.style.fill = "#565656";
+            SB.style.fill = "#565656";
         }
     }
 
