@@ -25,6 +25,7 @@
     border-left: 10px solid #1c2224;
     height: 97vh;
     overflow: scroll;
+    display: block;
 }
 
 .grid-container{

@@ -6,8 +6,8 @@ setupTitlebar();
 function createWindow () {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1520,
+    height: 1020,
     show:false,
     frame:false,
     webPreferences: {
