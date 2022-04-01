@@ -5,3 +5,8 @@
 .grid-element{
     padding: 5px;
 }
+
+.AnimationContainer{
+    height:50%;
+    overflow: scroll;
+}
