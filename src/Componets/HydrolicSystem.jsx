@@ -35,22 +35,11 @@ class HydrolicSystem extends Component {
         if(event.target.id === 'HYDP'){ // This opens the vavle at the bottom left release
           await  this.setState({ HydPress: this.state.HydPress === "Norm" ? "Rel" : "Norm"});
         }
-
-        if(event.target.id === "psi"){
-          if(this.state.psi < 400){
-             this.state.PsiColor = 'Yellow';
-          }else if((this.state.psi >= 1200) && (this.state.psi <= 1550)){
-              this.state.PsiColor = 'Green';
-          }else if(this.state.psi > 1850){
-              this.state.PsiColor = 'Red';
-          }
-        }console.log(this.state); //Uncomment this Line to See the JSON of the state
+        console.log(this.state); //Uncomment this Line to See the JSON of the state
         //Caculate PSI
             //Pressure Relief Valve opens automatically if greater than 1650 PSI.
             
-            //400 PSI Bright yellow (not working)
-            //1200 PSI - 1550 PSI Green (good window)
-            //greater than 1550 PSI gets Red until 1850 PSI which is solid Red
+          
 
         //Calculate Lights
             //Pressure Sensors in the center if each is less than 750 PSI they light up.
@@ -58,6 +47,7 @@ class HydrolicSystem extends Component {
 
         //Filter
             //All filters can be bypassed by being clogged (accidental so selected)
+            //Wil - Im yet to figure out how to exactly do this inside of this componet ;/
         
         //Pumps
             //Only run if the engine is running or the blades are spinning
@@ -157,16 +147,38 @@ class HydrolicSystem extends Component {
         }else{
             RHENG.style.backgroundColor = "rgb(49, 0, 0)";
         }
+           
+        
+        //400 PSI Bright yellow (not working)
+        //1200 PSI - 1550 PSI Green (good window)
+        //greater than 1550 PSI gets Red until 1850 PSI which is solid Red
+
+        //Calculate current PSI Example
+        let curPsi = this.state.psi;
+        curPsi = 10;
+
+        this.setState({psi: curPsi});
+
+        if(this.state.psi < 400){
+            document.getElementById('psiTag').style.color = 'Yellow';
+        }else if((this.state.psi >= 1200) && (this.state.psi <= 1550)){
+            document.getElementById('psiTag').style.color = 'Green';
+        }else if(this.state.psi > 1850){
+            document.getElementById('psiTag').style.color = 'Red';
+        }
+        
     }
 
+    //This handles psi Chage if changed by user broken but need atm
     handleChange(event) {
-        this.setState({value: event.target.psi});
+       this.setState({psi: event.target.psi});
+       this.updateSimVariables();
     }
 
     render(){
         return(<>  
             <span>
-                <h3>System PSI </h3>
+                <h3 id='psiTag'>System PSI </h3>
                 <input type="text" id="psi" value={this.state.psi} onChange={this.handleChange}/>
             </span>
             <div className='grid-container-hydrolics'>
