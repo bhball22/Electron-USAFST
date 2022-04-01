@@ -26,11 +26,15 @@ class HydrolicSystem extends Component {
         }
         if(event.target.id === 'LHENG'){
            await this.setState({ LHF:this.state.LHF === false ? true : false});
-           await this.setState({ LHV: this.state.LHV === "Open" ? "Closed" : "Open"});
+          if((this.state.LHV === "Open" && this.state.LHF === true) || (this.state.LHV === "Closed" && this.state.LHF === false)){
+            await this.setState({ LHV:this.state.LHV === "Open" ? "Closed" : "Open"});
+          }
         }
         if(event.target.id === 'RHENG'){
           await  this.setState({ RHF:this.state.RHF === false ? true : false});
-          await this.setState({ RHV:this.state.RHV === "Open" ? "Closed" : "Open"});
+          if((this.state.RHV === "Open" && this.state.RHF === true) || (this.state.RHV === "Closed" && this.state.RHF === false)){
+            await this.setState({ RHV:this.state.RHV === "Open" ? "Closed" : "Open"});
+          }
         }
         if(event.target.id === 'HYDP'){ // This opens the vavle at the bottom left release
           await  this.setState({ HydPress: this.state.HydPress === "Norm" ? "Rel" : "Norm"});
@@ -72,7 +76,7 @@ class HydrolicSystem extends Component {
         let SB = document.getElementById("SystemBleed");
         
 
-        if(this.state.LHV === "Closed"){
+        if(this.state.LHV === "Closed" || this.state.LHF === true){
             LHV.style.fill = "#565656";
             LHV.style.transform = "rotate(90deg) translate(610px,180px)";
             PVPL.style.fill = "#565656";
@@ -86,7 +90,7 @@ class HydrolicSystem extends Component {
             PFL.style.fill = this.state.PsiColor;
         }
 
-        if(this.state.RHV === "Closed"){
+        if(this.state.RHV === "Closed" || this.state.RHF === true){
             RHV.style.fill = "#565656";
             RHV.style.transform = "rotate(90deg) translate(610px,180px)";
             PVPR.style.fill = "#565656";
@@ -100,13 +104,13 @@ class HydrolicSystem extends Component {
             PFR.style.fill = this.state.PsiColor;
         }
 
-        if(this.state.LHV === "Closed" && this.state.RHV === "Closed"){
+        if((this.state.LHV === "Closed" || this.state.LHF === true) && (this.state.RHV === "Closed" || this.state.RHF === true)){
             OilO.style.fill = "#565656";
         }else{
             OilO.style.fill = this.state.PsiColor;
         }
 
-        if((this.state.HydPress === "Rel") && (this.state.LHV === "Open" || this.state.RHV ==="Open")){
+        if((this.state.HydPress === "Rel") && ((this.state.LHV === "Open" && this.state.LHF === false) || (this.state.RHV ==="Open" && this.state.RHF === false))){
             ORM.style.fill = this.state.PsiColor;
             SB.style.fill = this.state.PsiColor;
         }else{
