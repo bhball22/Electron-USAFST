@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import "./Styles/HydrolicSystem.css"
-import AnimationButton from './AnimationButton';
+import AnimationButton from './AnimationButton'
+import MAP from "../Assets/MAP.json";
+import { ListItem } from '@mui/material';
 
 
 class HydrolicSystem extends Component {
@@ -74,7 +76,6 @@ class HydrolicSystem extends Component {
         let OilO = document.getElementById("OilOut");
         let ORM = document.getElementById("OilReturnMain");
         let SB = document.getElementById("SystemBleed");
-        
 
         if(this.state.LHV === "Closed" || this.state.LHF === true){
             LHV.style.fill = "#565656";
@@ -82,6 +83,7 @@ class HydrolicSystem extends Component {
             PVPL.style.fill = "#565656";
             PSFL.style.fill = "#565656";
             PFL.style.fill = "#565656";
+            console.log(MAP.map["R O FLTR BYPASS R H PMP PRESS L O"].preFillColor);
         }else{
             LHV.style.fill = this.state.PsiColor;
             LHV.style.transform = "rotate(0deg)";
