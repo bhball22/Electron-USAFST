@@ -15,7 +15,6 @@ class HydrolicSystem extends Component {
         this.updateSimVariables = this.updateSimVariables.bind(this);
     }
 
-
     async updateSimVariables(event){
 
         //console.log(event.target.id); //Uncomment this line to see what the json on the event is (tells ya what button pressed)
@@ -47,8 +46,22 @@ class HydrolicSystem extends Component {
             await this.setState({ psi: this.state.psi });
             if(this.state.psi < 400){
                 this.setState({ PsiColor: this.state.PsiColor = 'Yellow' });
+            }else if ((this.state.psi >= 400) && (this.state.psi <= 600)){
+                this.setState({ PsiColor: this.state.PsiColor = '#DBFF00'});
+            }else if ((this.state.psi > 600) && (this.state.psi <= 800)){
+                this.setState({ PsiColor: this.state.PsiColor = '#B6FF00'});
+            }else if ((this.state.psi > 800) && (this.state.psi <= 1000)){
+                this.setState({ PsiColor: this.state.PsiColor = '#92FF00'});
+            }else if ((this.state.psi > 1000) && (this.state.psi < 1200)){
+                this.setState({ PsiColor: this.state.PsiColor = '#6DFF00'});
             }else if((this.state.psi >= 1200) && (this.state.psi <= 1550)){
                 this.setState({ PsiColor: this.state.PsiColor = 'Green' });
+            }else if ((this.state.psi > 1550) && (this.state.psi <= 1650)){
+                this.setState({ PsiColor: this.state.PsiColor = '#55AA00'});
+            }else if ((this.state.psi > 1650) && (this.state.psi <= 1750)){
+                this.setState({ PsiColor: this.state.PsiColor = '#808000'});
+            }else if ((this.state.psi > 1750) && (this.state.psi <= 1850)){
+                this.setState({ PsiColor: this.state.PsiColor = '#AA5500'});
             }else if(this.state.psi > 1850){
                 this.setState({ PsiColor: this.state.PsiColor = 'Red' });
             }
