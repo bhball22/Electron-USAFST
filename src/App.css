@@ -31,7 +31,7 @@
 .int-toggle-container {
     position: fixed;
     top: 50px;
-    right: 50px;
+    right: 20px;
     cursor: pointer;
     display: none;
     z-index: 2;
@@ -39,8 +39,8 @@
 
 .nav-toggle-container {
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 70px;
+    left: 20px;
     cursor: pointer;
     display: none;
     z-index: 2;
@@ -81,4 +81,20 @@
 
 #RIGHT{
     grid-area: right;
+}
+
+#NavBarOpened{
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    bottom: 50px;
+    left: 140px;
+}
+
+#InteractiveOpened{
+    position: fixed;
+    z-index: 2;
+    cursor: pointer;
+    right: 480px;
+    bottom: 50px;
 }

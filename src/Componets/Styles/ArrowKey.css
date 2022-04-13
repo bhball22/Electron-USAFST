@@ -23,3 +23,27 @@
 .ArrowKey[id=LEFT]{
     transform:      rotate(0deg)
 }
+
+.TabKey{
+    background: transparent;
+    padding: 0px;
+    z-index: 4;
+    height: 100px;
+    width: 40px;
+}
+
+.TabKey[id=NavBarClosed]{
+    transform: rotate(180deg)
+}
+
+.PullKey{
+    background: transparent;
+    padding: 0px;
+    z-index: 4;
+    height: 40px;
+    width: 40px;
+}
+
+.PullKey[id=InteractiveOpened]{
+    transform:rotate(180deg);
+}
