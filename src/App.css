@@ -25,6 +25,25 @@
     border-left: 10px solid #1c2224;
     height: 97vh;
     overflow: scroll;
+    display: block;
+}
+
+.int-toggle-container {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+}
+
+.nav-toggle-container {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
 }
 
 .grid-container{
@@ -63,3 +82,4 @@
 #RIGHT{
     grid-area: right;
 }
+
