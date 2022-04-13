@@ -1,6 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 
-function Icon() {
+class Icon extends Component {
+
+  constructor(props) {
+    super(props);
+    this.FilterFail = this.FilterFail.bind(this);
+  }
+
+  FilterFail(event){
+
+    console.log(event.target.id);
+    if(event.target.id === 'LeftFilter'){
+      document.getElementById("FilterBypassLeft").style.fill = 'Green';
+      document.getElementById("LeftFilter").style.fill = '#565656';
+    }
+
+  }
+
+  render(){
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -513,6 +530,7 @@ function Icon() {
             strokeWidth='0.04'
             rx='47.518'
             ry='48.087'
+            onClick={this.FilterFail}
           ></ellipse>
           <ellipse
             id='RightFilter'
@@ -568,5 +586,7 @@ function Icon() {
     </svg>
   );
 }
+}
+
 
 export default Icon;

@@ -1,10 +1,10 @@
 .sim-button{
     background-color: #1c2224;
-    width:200PX;
+    width:180PX;
     border: 3px;
     border-color: #1c2224;
     color: white;
-    padding: 15px 10px;
+    padding: 10px 10px;
     margin: 5px;
     text-align: center;
     text-decoration: none;
@@ -23,12 +23,39 @@
     border: 3px;
     border-color: #1c2224;
     color: white;
-    padding: 15px 10px;
+    padding: 10px 10px;
     margin: 5px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     display: flex;
+}
+
+.sim-button-failure{
+    background-color: #1c2224;
+    width: 170PX;
+    border: 3px;
+    border-color: #ffffff00;
+    color: white;
+    padding: 10px 10px;
+    margin: 5px;
+    text-align:center;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+}
+
+.sim-button-filter{
+    background-color: #1c2224;
+    width: 150PX;
+    border: 3px;
+    border-color: #ffffff00;
+    color: white;
+    padding: 10px 10px;
+    margin: 5px;
+    text-align:center;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 h3{
@@ -43,8 +70,8 @@ p{
 .grid-container-hydrolics{
     display:grid;
     grid-template-areas:
-        'Buttons Lights';
-    grid-gap: 10px;
+        'Buttons Failure-Buttons Lights';
+    grid-gap: 5px;
 }
 
 
