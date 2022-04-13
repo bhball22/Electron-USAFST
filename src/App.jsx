@@ -4,7 +4,7 @@ import NavButton from './Componets/NavButton';
 import Slider from './Componets/Slider';
 import ScrollButton from './Componets/ScrollButton';
 import AnimationPane from './Componets/AnimationPane';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App(props) {
   const [ Zoom, setZoom] = useState(1);
@@ -38,6 +38,26 @@ function App(props) {
     setPosy(30)
     setPosx(6)
   }
+  function hideNavBar() {
+      if (document.getElementById('navBar').style.width != '0px'){
+          document.getElementById('navBar').style.width = '0px'
+          document.getElementById('nav-toggle-container').style.display = 'block'
+      }
+      else {
+          document.getElementById('navBar').style.width = '200px'
+          document.getElementById('nav-toggle-container').style.display = 'none'
+      }
+   }
+  function hideHydrolic() {
+      if (document.getElementById('interactivePane').style.display == 'none') {
+          document.getElementById('interactivePane').style.display = 'block'
+          document.getElementById('int-toggle-container').style.display = 'none'
+      }
+      else {
+          document.getElementById('interactivePane').style.display = 'none'
+          document.getElementById('int-toggle-container').style.display = 'block'
+      }
+  }
 
   useEffect(()=> {
     if(shouldRender){
@@ -46,13 +66,21 @@ function App(props) {
   })
 
   return (
+
     <div className="App grid-container">
-        <div className="NavBar">
-            <NavButton onChange={()=>setRadarView()}tag="Radar Controlls"/>
+        <div className="int-toggle-container" id="int-toggle-container">
+            <NavButton onChange={() => hideHydrolic()} tag="Show Hydrolic" id="hideHydrolic" />
+        </div>
+        <div className="nav-toggle-container" id="nav-toggle-container">
+            <NavButton onChange={() => hideNavBar()} tag="Show NavBar" id="toggleNavBar" />
+        </div>
+        <div className="NavBar" id="navBar">
+            <NavButton onChange={()=>setRadarView()}tag="Radar Controls"/>
             <NavButton onChange={()=>setSystemView()}tag="System Information"/>
             <NavButton onChange={()=>setDisplayView()}tag="Flight Display"/>
-            <NavButton onChange={()=>setNavView()}tag="Navigation Controlls"/>
-            <NavButton onChange={()=>setWideView()}tag="Wide View"/>
+            <NavButton onChange={()=>setNavView()}tag="Navigation Controls"/>
+            <NavButton onChange={() => setWideView()} tag="Wide View" />
+            <NavButton onChange={() => hideNavBar()} tag="Hide NavBar" id="toggleNavBar" />
             <Slider onSlider={(i)=>setZoom(i)}></Slider>
             <div className="button-grid-container">
               <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP' />
@@ -62,13 +90,14 @@ function App(props) {
             </div>
         </div>
         <div className = "ViewPort">
-          <Mapper Zoom = {Zoom} posx = {posx} posy = {posy} id="mapper"/>
-          
+              <Mapper Zoom={Zoom} posx={posx} posy={posy} id="mapper" />
         </div>
-        <div className='InteractivePane'>
-          <AnimationPane/>
+        <div className='InteractivePane' id = 'interactivePane'>
+          <NavButton onChange={() => hideHydrolic()} tag="Hide Hydrolic" id="hideHydrolic" />
+          <AnimationPane />
         </div>
     </div>
+
   );
 }
 
