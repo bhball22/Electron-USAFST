@@ -67,6 +67,13 @@
         'left down right'
 }
 
+#buttonGridViewPort{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5
+}
+
 #UP{
     grid-area: up;
 }
