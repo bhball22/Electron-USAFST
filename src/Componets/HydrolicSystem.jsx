@@ -10,7 +10,7 @@ class HydrolicSystem extends Component {
     constructor(props){
         super(props);
         //Simulation Variables / Default values
-        this.state = {psi: 1500 , PsiColor: 'green',LHV: "Open", RHV: "Open", LHF: false, RHF: false, HydPress:"Norm", PRV:"Working", LeftEngine:"Functioning", RightEngine:"Functioning", LeftFilter:"Flowing", RightFilter:"Flowing", TopFilter:"Flowing"};
+        this.state = {psi: 1500 , PsiColor: 'green',LHV: "Open", RHV: "Open", LHF: false, RHF: false, HYD: false, HydPress:"Norm", PRV:"Working", LeftEngine:"Functioning", RightEngine:"Functioning", LeftFilter:"Flowing", RightFilter:"Flowing", TopFilter:"Flowing"};
         this.handleChange = this.handleChange.bind(this);
         this.updateSimVariables = this.updateSimVariables.bind(this);
     }
@@ -42,6 +42,9 @@ class HydrolicSystem extends Component {
         if(event.target.id === 'HYDP'){ // This opens the vavle at the bottom left release
           await  this.setState({ HydPress: this.state.HydPress === "Norm" ? "Rel" : "Norm"});
         }
+        if(event.target.id === 'HYD'){
+            await this.setState({ HYD: this.state.HYD === false ? true : false});
+        }
         if(event.target.id === 'LEF'){
             await this.setState({ LeftEngine: this.state.LeftEngine === "Functioning" ? "Failed" : "Functioning"});
         }
@@ -60,9 +63,9 @@ class HydrolicSystem extends Component {
         if(event.target.id === 'TF'){
             await this.setState({ TopFilter: this.state.TopFilter === "Flowing" ? "Clogged" : "Flowing" });
         }
-        if(event.target.id === 'PSI'){
+        if(event.target.id === 'PSI' || event.target.id === 'HYD'){
             await this.setState({ psi: this.state.psi });
-            if(this.state.psi < 400){
+            if(this.state.psi < 400 || this.state.HYD === true){
                 this.setState({ PsiColor: this.state.PsiColor = 'Yellow' });
             }else if ((this.state.psi >= 400) && (this.state.psi <= 600)){
                 this.setState({ PsiColor: this.state.PsiColor = '#DBFF00'});
@@ -261,10 +264,30 @@ class HydrolicSystem extends Component {
             REF.style.backgroundColor = '#1c2224';
         }
 
+        let HYDL = document.getElementById("HYDL");
         let HYD = document.getElementById("HYD");
         let LOFB = document.getElementById("LOFB");
         let RFBP = document.getElementById("RFBP");
 
+        if(this.state.HYD === true){
+            HYDL.style.color = 'Yellow'
+            HYD.style.color = 'Red'
+        }else{
+            HYDL.style.color = '#1c2224'
+            HYD.style.color = 'White'
+        }
+
+        if(this.state.LeftFilter === "Clogged"){
+            LOFB.style.color = 'Yellow'
+        }else{
+            LOFB.style.color = '#1c2224'
+        }
+        
+        if(this.state.RightFilter === "Clogged"){
+            RFBP.style.color = 'Yellow'
+        }else{
+            RFBP.style.color = '#1c2224'
+        }
     }
 
     //This handles psi Chage if changed by user broken but need atm
@@ -293,11 +316,12 @@ class HydrolicSystem extends Component {
                     <button className='sim-button-failure' onClick={this.updateSimVariables} id= 'LEF'>Left Engine: {this.state.LeftEngine}</button>
                     <button className='sim-button-failure' onClick={this.updateSimVariables} id= 'REF'>Right Engine: {this.state.RightEngine}</button>
                     <button className='sim-button-failure' onClick={this.updateSimVariables} id= 'PRV'>Pressure Relief Valve: {this.state.PRV}</button>
+                    <button className='sim-button-failure' onClick={this.updateSimVariables} id= 'HYD'>Hydraulic Leak?</button>
                 </div>
                 <div id= "Lights">
-                    <p className='sim-light' id= 'HYD'>HYD LVL LOW</p>
-                    <p className='sim-light' id= 'LOFB'>LO Filter Bypass</p>
-                    <p className='sim-light' id= 'RFBP'>RO Filter Bypass</p>
+                    <p className='sim-light' id= 'HYDL'>HYD<br/>LVL LOW<br/>RUD<br/>BST FAIL</p>
+                    <p className='sim-light' id= 'LOFB'>LO FLTR<br/>BYPASS<br/>LH PMP<br/>PRESS LO</p>
+                    <p className='sim-light' id= 'RFBP'>RO FLTR<br/>BYPASS<br/>RH PMP<br/>PRESS LO</p>
                 </div>
             </div>
             <div id= "Filters">
