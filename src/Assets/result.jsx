@@ -1,6 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 
-function Icon() {
+class Icon extends Component {
+
+  constructor(props) {
+    super(props);
+    this.FilterFail = this.FilterFail.bind(this);
+  }
+
+  FilterFail(event){
+
+    console.log(event.target.id);
+    if(event.target.id === 'LeftFilter'){
+      document.getElementById("FilterBypassLeft").style.fill = 'Green';
+      document.getElementById("LeftFilter").style.fill = '#565656';
+    }
+
+  }
+
+  render(){
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -16,7 +33,7 @@ function Icon() {
         >
           <path
             id='SystemBleed'
-            fill='#ccc'
+            fill='#565656'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -26,7 +43,7 @@ function Icon() {
           ></path>
           <path
             id='OilReturnBreaks'
-            fill='#ccc'
+            fill='#565656'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -39,7 +56,7 @@ function Icon() {
             height='364.415'
             x='125.842'
             y='-592.219'
-            fill='#ccc'
+            fill='#565656'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -49,7 +66,7 @@ function Icon() {
           ></rect>
           <path
             id='OilOut'
-            fill='#deaa87'
+            fill='green'
             fillOpacity='1'
             stroke='#000'
             strokeOpacity='1'
@@ -58,7 +75,7 @@ function Icon() {
           ></path>
           <path
             id='FilterBypassLeft'
-            fill='#ccc'
+            fill='#565656'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -67,7 +84,7 @@ function Icon() {
           ></path>
           <path
             id='FilterBypassRight'
-            fill='#ccc'
+            fill='#565656'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -76,7 +93,7 @@ function Icon() {
           ></path>
           <path
             id='FilterBypassTop'
-            fill='#ccc'
+            fill='#565656'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -85,7 +102,7 @@ function Icon() {
           ></path>
           <path
             id='PostFilterLeft'
-            fill='#deaa87'
+            fill='green'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -94,7 +111,7 @@ function Icon() {
           ></path>
           <path
             id='PostFilterRight'
-            fill='#deaa87'
+            fill='green'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -103,7 +120,7 @@ function Icon() {
           ></path>
           <path
             id='PumpSensorFilterLeft'
-            fill='#deaa87'
+            fill='green'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -112,7 +129,7 @@ function Icon() {
           ></path>
           <path
             id='PumpSensorFilterRight'
-            fill='#deaa87'
+            fill='green'
             fillOpacity='1'
             stroke='none'
             strokeOpacity='1'
@@ -148,7 +165,7 @@ function Icon() {
             height='238.928'
             x='-24.049'
             y='-417.842'
-            fill='#ccc'
+            fill='#565656'
             stroke='#000'
             strokeOpacity='1'
             strokeWidth='0.108'
@@ -157,7 +174,7 @@ function Icon() {
           ></rect>
           <path
             id='ReservoirReliefPipe'
-            fill='#ccc'
+            fill='#565656'
             stroke='#000'
             strokeOpacity='1'
             strokeWidth='0.074'
@@ -282,7 +299,7 @@ function Icon() {
             ry='0'
             transform='rotate(45)'
           ></rect>
-          <g id='OilReservoir' fill='#deaa87' fillOpacity='1' strokeOpacity='1'>
+          <g id='OilReservoir' fill='green' fillOpacity='1' strokeOpacity='1'>
             <rect
               id='fluidbase'
               width='299.412'
@@ -318,7 +335,7 @@ function Icon() {
           </g>
           <path
             id='Pump-Valve-Pipe-Left'
-            fill='#deaa87'
+            fill='green'
             fillOpacity='1'
             stroke='#000'
             strokeOpacity='1'
@@ -344,13 +361,13 @@ function Icon() {
             ></circle>
             <path
               id='path520918'
-              fill='#deaa87'
+              fill='green'
               d='M-394.192 157.48a57.195 57.195 0 00-16.997 2.59v109.21a57.195 57.195 0 0016.997 2.59 57.195 57.195 0 0015.225-2.103V159.548a57.195 57.195 0 00-15.225-2.068z'
             ></path>
           </g>
           <path
             id='Pump-Valve-Pipe-Right'
-            fill='#deaa87'
+            fill='green'
             fillOpacity='1'
             stroke='#000'
             strokeOpacity='1'
@@ -376,7 +393,7 @@ function Icon() {
             ></circle>
             <path
               id='path520918-6'
-              fill='#deaa87'
+              fill='green'
               d='M-394.192 157.48a57.195 57.195 0 00-16.997 2.59v109.21a57.195 57.195 0 0016.997 2.59 57.195 57.195 0 0015.225-2.103V159.548a57.195 57.195 0 00-15.225-2.068z'
             ></path>
           </g>
@@ -400,12 +417,12 @@ function Icon() {
             ></circle>
             <path
               id='path520918-0'
-              fill='#deaa87'
+              fill='#6f6f91'
               d='M-191.31 514.463a57.195 57.195 0 00-2.59-16.998h-109.21a57.195 57.195 0 00-2.59 16.998 57.195 57.195 0 002.104 15.224h110.218a57.195 57.195 0 002.068-15.224z'
             ></path>
             <path
               id='path520918-0-5'
-              fill='#deaa87'
+              fill='green'
               d='M-249.391 570.771a57.195 57.195 0 0016.997-2.59v-109.21a57.195 57.195 0 00-16.997-2.59 57.195 57.195 0 00-15.224 2.103v110.219a57.195 57.195 0 0015.224 2.068z'
             ></path>
           </g>
@@ -429,12 +446,12 @@ function Icon() {
             ></circle>
             <path
               id='path520918-0-2'
-              fill='#deaa87'
+              fill='#6f6f91'
               d='M-191.31 514.463a57.195 57.195 0 00-2.59-16.998h-109.21a57.195 57.195 0 00-2.59 16.998 57.195 57.195 0 002.104 15.224h110.218a57.195 57.195 0 002.068-15.224z'
             ></path>
             <path
               id='path520918-0-5-9'
-              fill='#deaa87'
+              fill='green'
               d='M-249.391 570.771a57.195 57.195 0 0016.997-2.59v-109.21a57.195 57.195 0 00-16.997-2.59 57.195 57.195 0 00-15.224 2.103v110.219a57.195 57.195 0 0015.224 2.068z'
             ></path>
           </g>
@@ -513,6 +530,7 @@ function Icon() {
             strokeWidth='0.04'
             rx='47.518'
             ry='48.087'
+            onClick={this.FilterFail}
           ></ellipse>
           <ellipse
             id='RightFilter'
@@ -568,5 +586,7 @@ function Icon() {
     </svg>
   );
 }
+}
+
 
 export default Icon;

@@ -44,11 +44,13 @@ function App(props) {
           document.getElementById('navBar').style.width = '0px'
           document.getElementById('nav-toggle-container').style.display = 'block'
           document.getElementById('NavBarOpened').style.display = 'none'
+          document.getElementById('buttonGridViewPort').style.display = 'grid'
       }
       else {
           document.getElementById('navBar').style.width = '200px'
           document.getElementById('nav-toggle-container').style.display = 'none'
           document.getElementById('NavBarOpened').style.display = 'block'
+          document.getElementById('buttonGridViewPort').style.display = 'none'
       }
    }
   function hideHydrolic() {
@@ -96,6 +98,12 @@ function App(props) {
         </div>
         <div className = "ViewPort">
               <Mapper Zoom={Zoom} posx={posx} posy={posy} id="mapper" />
+              <div className="button-grid-container" id="buttonGridViewPort">
+                <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP' />
+                <ScrollButton onChange={()=>setPosx(posx - 2)} id='DOWN'/>
+                <ScrollButton onChange={()=>setPosy(posy + 2)} id='LEFT'/>
+                <ScrollButton onChange={()=>setPosy(posy - 2)} id='RIGHT'/>
+            </div>
         </div>
         <div className='InteractivePane' id = 'interactivePane'>
           <AnimationPane />

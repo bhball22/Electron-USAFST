@@ -1,10 +1,10 @@
 .sim-button{
     background-color: #1c2224;
-    width:200PX;
+    width:180PX;
     border: 3px;
     border-color: #1c2224;
     color: white;
-    padding: 15px 10px;
+    padding: 10px 10px;
     margin: 5px;
     text-align: center;
     text-decoration: none;
@@ -18,17 +18,45 @@
 
 .sim-light{
     background-color: #1c2224;
-    width:100px;
-    height: 50px;
+    width: 60px;
     border: 3px;
-    border-color: #1c2224;
-    color: white;
-    padding: 15px 10px;
+    border-color: #292929;
+    color: #1c2224;
+    padding: 10px 10px;
     margin: 5px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+}
+
+.sim-button-failure{
+    background-color: #1c2224;
+    width: 170PX;
+    border: 3px;
+    border-color: #ffffff00;
+    color: white;
+    padding: 10px 10px;
+    margin: 5px;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     display: flex;
+}
+
+.sim-button-filter{
+    background-color: #1c2224;
+    width: 150PX;
+    border: 3px;
+    border-color: #ffffff00;
+    color: white;
+    padding: 10px 10px;
+    margin: 5px;
+    text-align:center;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 h3{
@@ -43,8 +71,8 @@ p{
 .grid-container-hydrolics{
     display:grid;
     grid-template-areas:
-        'Buttons Lights';
-    grid-gap: 10px;
+        'Buttons Failure-Buttons Lights';
+    grid-gap: 5px;
 }
 
 
@@ -68,15 +96,3 @@ p{
     background-color: rgb(255, 139, 139);
 }
 
-#HYD{
-    background-color: rgb(51, 37, 3);
-    color:white;
-}
-
-#LOFB{
-    background-color: rgb(51, 37, 3);
-}
-
-#RFBP{
-    background-color: rgb(51, 37, 3);
-}
