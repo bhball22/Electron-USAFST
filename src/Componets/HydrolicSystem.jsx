@@ -277,13 +277,13 @@ class HydrolicSystem extends Component {
             HYD.style.color = 'White'
         }
 
-        if(this.state.LeftFilter === "Clogged"){
+        if((this.state.psi < 750) || (this.state.LeftEngine === "Failed") || (this.state.LHV === "Closed") || (this.state.LHF)){
             LOFB.style.color = 'Yellow'
         }else{
             LOFB.style.color = '#1c2224'
         }
         
-        if(this.state.RightFilter === "Clogged"){
+        if((this.state.psi < 750) || (this.state.RightEngine === "Failed") || (this.state.RHV === "Closed") || (this.state.RHF)){
             RFBP.style.color = 'Yellow'
         }else{
             RFBP.style.color = '#1c2224'
