@@ -11,6 +11,7 @@ class HydrolicSystem extends Component {
         super(props);
         //Simulation Variables / Default values
         this.state = {psi: 1500 , PsiColor: 'green',LHV: "Open", RHV: "Open", LHF: false, RHF: false, HYD: false, HydPress:"Norm", PRV:"Working", LeftEngine:"Functioning", RightEngine:"Functioning", LeftFilter:"Flowing", RightFilter:"Flowing", TopFilter:"Flowing"};
+        this.initialState = this.state;
         this.handleChange = this.handleChange.bind(this);
         this.updateSimVariables = this.updateSimVariables.bind(this);
     }
@@ -21,6 +22,9 @@ class HydrolicSystem extends Component {
 
         event.preventDefault();
 
+        if(event.target.id === 'RESET'){
+            await this.setState(this.initialState);
+        }
         if(event.target.id === 'LV'){ //ID: LV and LVENG both open and close the left valve.
            await this.setState({ LHV: this.state.LHV === "Open" ? "Closed" : "Open"});
         }
@@ -328,6 +332,9 @@ class HydrolicSystem extends Component {
                 <button className='sim-button-filter' onClick={this.updateSimVariables} id='LF'>Left Filter: {this.state.LeftFilter}</button>
                 <button className='sim-button-filter' onClick={this.updateSimVariables} id='RF'>Right Filter: {this.state.RightFilter}</button>
                 <button className='sim-button-filter' onClick={this.updateSimVariables} id='TF'>Return Filter: {this.state.TopFilter}</button>
+            </div>
+            <div id= "RESET">
+                <button className='sim-button-reset' onClick={this.updateSimVariables} id="RESET">RESET</button>
             </div>
         </>)
     }

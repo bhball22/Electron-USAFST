@@ -59,6 +59,20 @@
     font-size: 16px;
 }
 
+.sim-button-reset{
+    background-color: #1c2224;
+    width: 150PX;
+    border: 3px;
+    border-color: #ffffff00;
+    color: white;
+    padding: 10px 10px;
+    margin: 5px;
+    text-align:center;
+    text-decoration: none;
+    font-size: 16px;
+    float: right;
+}
+
 h3{
     color: white;
     display: inline;
