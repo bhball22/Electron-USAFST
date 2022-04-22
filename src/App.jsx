@@ -14,30 +14,10 @@ function App(props) {
   
   const shouldRender = false;
 
-  function setRadarView(){
-    setZoom(40)
-    setPosy(-10)
-    setPosx(-88)
-  }
-  function setSystemView(){
-    setZoom(50)
-    setPosy(30)
-    setPosx(-168)
-  }
-  function setDisplayView(){
-    setZoom(40)
-    setPosy(-26)
-    setPosx(10)
-  }
-  function setNavView(){
-    setZoom(30)
-    setPosy(-12)
-    setPosx(-130)
-  }
   function setWideView(){
     setZoom(1)
-    setPosy(30)
-    setPosx(6)
+    setPosy(0)
+    setPosx(0)
   }
   function hideNavBar() {
       if (document.getElementById('navBar').style.width != '0px'){
@@ -82,10 +62,6 @@ function App(props) {
             <ClosedDrawer onChange={() => hideNavBar()} id="NavBarClosed" />
         </div>
         <div className="NavBar" id="navBar">
-            <NavButton onChange={()=>setRadarView()}tag="Radar Controls"/>
-            <NavButton onChange={()=>setSystemView()}tag="System Information"/>
-            <NavButton onChange={()=>setDisplayView()}tag="Flight Display"/>
-            <NavButton onChange={()=>setNavView()}tag="Navigation Controls"/>
             <NavButton onChange={() => setWideView()} tag="Wide View" />
             <Slider onSlider={(i)=>setZoom(i)}></Slider>
             <div className="button-grid-container">
