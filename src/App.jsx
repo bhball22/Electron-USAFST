@@ -1,3 +1,5 @@
+// This file controls the side panes, contains the buttons and the functions they are linked to, and edits the css properties of the panes.
+
 import './App.css';
 import Mapper from './Componets/Mapper'
 import NavButton from './Componets/NavButton';
