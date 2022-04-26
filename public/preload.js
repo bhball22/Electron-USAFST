@@ -1,3 +1,5 @@
+//This file allows us to customize the app's title bar style and contents.
+
 const { Titlebar, Color } = require('custom-electron-titlebar');
 const path = require('path');
 

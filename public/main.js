@@ -1,3 +1,5 @@
+//This file runs the app as both a standalone and as a locally hosted web application on http://localhost:3000.
+
 const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
 const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main');
