@@ -1,4 +1,4 @@
-import { React , useState } from 'react'
+import { React , useEffect, useState } from 'react'
 import "./Styles/AnimationPane.css"
 import HydrolicSystem from './HydrolicSystem'
 import InteractiveDiagramHydrolic from "../Assets/result.jsx"
@@ -7,6 +7,8 @@ import NoninteractiveDiagramHydrolic from  "../Assets/hydrolics.png"
 
 const AnimationPane = (props) => {
     const [displayType, setDisplayType] = useState(true);
+
+    const shouldRender = true;
 
     const handelChange = () => {
         setDisplayType(!displayType);
@@ -18,9 +20,12 @@ const AnimationPane = (props) => {
             document.getElementById("HydrolicPng").style.display = "none";
         }
         
-
     }
-    
+    useEffect(()=>{
+        if(shouldRender){
+            console.log(props.buttonPressed + " yes ");
+        }
+    })
         return(
             <>
                 <div className="AnimationContainer grid-element grid-container">
@@ -33,7 +38,7 @@ const AnimationPane = (props) => {
                     <InteractiveDiagramHydrolic/>
                 </div>
                 <div className="InfoProcessing grid-element">
-                    <HydrolicSystem />
+                    <HydrolicSystem  buttonPressed = {props.buttonPressed}/>
                 </div>
             </>
         )

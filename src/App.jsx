@@ -11,6 +11,8 @@ function App(props) {
   const [ Zoom, setZoom] = useState(1);
   const [ posx, setPosx] = useState(0);
   const [ posy, setPosy] = useState(0);
+
+  const [ mainViewInteraction, setMainViewInteraction ] = useState(null);
   
   const shouldRender = false;
 
@@ -45,10 +47,14 @@ function App(props) {
           document.getElementById('InteractiveOpened').style.display = 'none'
       }
   }
+  function onButtonClicked(area){
+    setMainViewInteraction(area.name);
+    //console.log(area.name);
+  }
 
   useEffect(()=> {
     if(shouldRender){
-
+      setMainViewInteraction(null);
     }
   })
 
@@ -73,7 +79,7 @@ function App(props) {
             <OpenedDrawer onChange={() => hideNavBar()} id="NavBarOpened" />
         </div>
         <div className = "ViewPort">
-              <Mapper Zoom={Zoom} posx={posx} posy={posy} id="mapper" />
+              <Mapper Zoom={Zoom} posx={posx} posy={posy} id="mapper" onButtonClicked={onButtonClicked}/>
               <div className="button-grid-container" id="buttonGridViewPort">
                 <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP' />
                 <ScrollButton onChange={()=>setPosx(posx - 2)} id='DOWN'/>
@@ -82,7 +88,7 @@ function App(props) {
             </div>
         </div>
         <div className='InteractivePane' id = 'interactivePane'>
-          <AnimationPane />
+          <AnimationPane buttonPressed = {mainViewInteraction}/>
           <OpenedDrawer onChange={() => hideHydrolic()} id="InteractiveOpened" />
         </div>
     </div>

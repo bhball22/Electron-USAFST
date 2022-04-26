@@ -31,7 +31,7 @@ const Mapper = (props) =>{
         imgWidth = {3500}
         responsive = {true}
         parentWidth = {WIDTH}
-        onClick={(area) => { console.log(area.name)}}
+        onClick={(area) => {props.onButtonClicked(area)}}
         />
       </div>
 
