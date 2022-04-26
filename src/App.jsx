@@ -4,8 +4,10 @@ import NavButton from './Componets/NavButton';
 import Slider from './Componets/Slider';
 import ScrollButton from './Componets/ScrollButton';
 import AnimationPane from './Componets/AnimationPane';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { ClosedDrawer, OpenedDrawer } from './Componets/DrawerButton';
 import { useEffect, useState } from 'react';
+
 
 function App(props) {
   const [ Zoom, setZoom] = useState(1);
@@ -54,39 +56,49 @@ function App(props) {
 
   return (
 
-    <div className="App grid-container">
-        <div className="int-toggle-container" id="int-toggle-container">
-            <ClosedDrawer onChange={() => hideHydrolic()} id="InteractiveClosed" />
-        </div>
-        <div className="nav-toggle-container" id="nav-toggle-container">
-            <ClosedDrawer onChange={() => hideNavBar()} id="NavBarClosed" />
-        </div>
-        <div className="NavBar" id="navBar">
-            <NavButton onChange={() => setWideView()} tag="Wide View" />
-            <Slider onSlider={(i)=>setZoom(i)}></Slider>
-            <div className="button-grid-container">
-              <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP' />
-              <ScrollButton onChange={()=>setPosx(posx - 2)} id='DOWN'/>
-              <ScrollButton onChange={()=>setPosy(posy + 2)} id='LEFT'/>
-              <ScrollButton onChange={()=>setPosy(posy - 2)} id='RIGHT'/>
-            </div>
-            <OpenedDrawer onChange={() => hideNavBar()} id="NavBarOpened" />
-        </div>
-        <div className = "ViewPort">
-              <Mapper Zoom={Zoom} posx={posx} posy={posy} id="mapper" />
-              <div className="button-grid-container" id="buttonGridViewPort">
-                <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP' />
-                <ScrollButton onChange={()=>setPosx(posx - 2)} id='DOWN'/>
-                <ScrollButton onChange={()=>setPosy(posy + 2)} id='LEFT'/>
-                <ScrollButton onChange={()=>setPosy(posy - 2)} id='RIGHT'/>
-            </div>
-        </div>
-        <div className='InteractivePane' id = 'interactivePane'>
-          <AnimationPane />
-          <OpenedDrawer onChange={() => hideHydrolic()} id="InteractiveOpened" />
-        </div>
-    </div>
+    <TransformWrapper
+    initialScale ={1}
+    initialPositionX={posx}
+    initialPositionY={posy}
+    >
+      {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
 
+        <div className="App grid-container">
+            <div className="int-toggle-container" id="int-toggle-container">
+                <ClosedDrawer onChange={() => hideHydrolic()} id="InteractiveClosed" />
+            </div>
+            <div className="nav-toggle-container" id="nav-toggle-container">
+                <ClosedDrawer onChange={() => hideNavBar()} id="NavBarClosed" />
+            </div>
+            <div className="NavBar" id="navBar">
+                <NavButton onChange={() => setWideView()} tag="Wide View" />
+                <Slider onSlider={(i)=>setZoom(i)}></Slider>
+                <div className="button-grid-container">
+                  <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP' />
+                  <ScrollButton onChange={()=>setPosx(posx - 2)} id='DOWN'/>
+                  <ScrollButton onChange={()=>setPosy(posy + 2)} id='LEFT'/>
+                  <ScrollButton onChange={()=>setPosy(posy - 2)} id='RIGHT'/>
+                </div>
+                <OpenedDrawer onChange={() => hideNavBar()} id="NavBarOpened" />
+            </div>
+            <div className = "ViewPort">
+              <TransformComponent>
+                  <Mapper Zoom={Zoom} posx={posx} posy={posy} id="mapper" />
+                  <div className="button-grid-container" id="buttonGridViewPort">
+                    <ScrollButton onChange={()=>setPosx(posx + 2)} id='UP' />
+                    <ScrollButton onChange={()=>setPosx(posx - 2)} id='DOWN'/>
+                    <ScrollButton onChange={()=>setPosy(posy + 2)} id='LEFT'/>
+                    <ScrollButton onChange={()=>setPosy(posy - 2)} id='RIGHT'/>
+                </div>
+              </TransformComponent>
+            </div>
+            <div className='InteractivePane' id = 'interactivePane'>
+              <AnimationPane />
+              <OpenedDrawer onChange={() => hideHydrolic()} id="InteractiveOpened" />
+            </div>
+        </div>
+      )}
+    </TransformWrapper>
   );
 }
 
