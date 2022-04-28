@@ -205,7 +205,7 @@ class HydrolicSystem extends Component {
             OilO.style.fill = this.state.PsiColor;
         }
 
-        if((this.state.HydPress === "Rel") && ((this.state.LHV === "Open" && this.state.LHF === false) || (this.state.RHV ==="Open" && this.state.RHF === false)) || (this.state.PRV ==="Working" && this.state.psi > 1650)){
+        if(((this.state.HydPress === "Rel") && ((this.state.LHV === "Open" && this.state.LHF === false) || (this.state.RHV ==="Open" && this.state.RHF === false))) || ((this.state.PRV ==="Working" && this.state.psi > 1650) && ((this.state.LHV === "Open" && this.state.LHF === false) || (this.state.RHV ==="Open" && this.state.RHF === false)))){
             ORM.style.fill = this.state.PsiColor;
             SB.style.fill = this.state.PsiColor;
             if(this.state.TopFilter === "Clogged"){
@@ -312,7 +312,7 @@ class HydrolicSystem extends Component {
                 <div id= "Buttons">
                     <button className='sim-button' onClick={this.updateSimVariables} id='LV'>LHV / LFV - {this.state.LHV}</button>
                     <button className='sim-button' onClick={this.updateSimVariables} id= 'LHENG'>LH ENG FIRE</button>
-                    <button className='sim-button' onClick={this.updateSimVariables} id= 'RHENG'>RH ENGF FIRE</button>
+                    <button className='sim-button' onClick={this.updateSimVariables} id= 'RHENG'>RH ENG FIRE</button>
                     <button className='sim-button' onClick={this.updateSimVariables} id= 'RV'>RHV / RFV - {this.state.RHV}</button>
                     <button className='sim-button' onClick={this.updateSimVariables} id= 'HYDP'>Hyd Press Rel: {this.state.HydPress}</button>
                 </div>

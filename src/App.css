@@ -1,3 +1,5 @@
+/* This file contains the base styling for the panes and buttons necessary for them to appear in their specific positions and not overlap. */
+
 .ViewPort{
     overflow: hidden;
     justify-self:start;
