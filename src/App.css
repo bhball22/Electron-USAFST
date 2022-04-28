@@ -9,16 +9,6 @@
     grid-area: viewPort;
     box-shadow: inset 0px 6px 10px black;
 }
-.NavBar{
-    padding-top: 2vh;
-    overflow: hidden;
-    background-color: #1c2224;
-    text-align: center;
-    width: 200px;
-    grid-area: navBar;
-    z-index: 1;
-    height: 95vh;
-}
 
 .InteractivePane{
     grid-area: interactivePane;
@@ -52,8 +42,8 @@
     grid-template-columns: auto minmax(0, 1fr);
     display:grid;
     grid-template-areas:
-        'navBar viewPort interactivePane'
-        'navBar viewPort interactivePane'
+        'viewport viewPort interactivePane'
+        'viewport viewPort interactivePane'
 }
 
 ::-webkit-scrollbar{
@@ -100,6 +90,10 @@
     left: 140px;
 }
 
+.transform-component-module_wrapper__1_Fgj{
+    overflow: visible !important;
+}
+
 #InteractiveOpened{
     position: fixed;
     z-index: 2;
@@ -110,4 +104,9 @@
 
 #buttonGridViewPort{
     display: none;
+}
+
+/*Not Ideal but can't figure out why height = 0 */ 
+#img-mapper{
+    height:2343px !important;
 }

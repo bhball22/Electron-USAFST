@@ -1,15 +1,15 @@
+import zIndex from '@mui/material/styles/zIndex'
 import React from 'react'
 import "./Styles/Button.css"
 
 const NavButton = (props) => {
 
-    function Change(event) {
-        props.onChange();
-        console.log(props.tag)
-        };
+    function transform(event) {
+        props.transform()
+    };
     
         return(
-            <div onClick={(i)=>Change(i)} className='Button'>
+            <div onClick={(i)=> transform(i) } className='Button' style = {{position: 'absolute', zIndex: '1'}}>
             <p style={{ userSelect: 'none'}}>{props.tag}</p>
         </div>
         )
