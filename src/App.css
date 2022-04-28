@@ -88,6 +88,10 @@
     left: 140px;
 }
 
+.transform-component-module_wrapper__1_Fgj{
+    overflow: visible !important;
+}
+
 #InteractiveOpened{
     position: fixed;
     z-index: 2;
@@ -102,5 +106,5 @@
 
 /*Not Ideal but can't figure out why height = 0 */ 
 #img-mapper{
-    height:1000px !important;
+    height:2343px !important;
 }
