@@ -1,17 +1,10 @@
-import { Hidden } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ImageMapper from 'react-img-mapper';
 import url from '../Assets/img.png';
 import area from '../Assets/MAP.json';
 
 
 const Mapper = (props) =>{
-
-  const [ WIDTH, setWidth] = useState((props.Zoom * 40) + 800);
-
-  useEffect(()=>{
-    setWidth((props.Zoom * 40) + 800)
-  })
 
   const URL = url;
   const MAP = {
@@ -21,17 +14,19 @@ const Mapper = (props) =>{
     return (
       <div id='map-container' style={{ 
         position: "relative",
-        left: `${props.posy}vw`,
-        top: `${props.posx}vh`,
+        width: '100%',
+        height: '100%',
         'zindex': '2',
       }}>
  <ImageMapper
         src = {URL} 
         map = {MAP} 
-        imgWidth = {3500}
+        imgWidth = {4200}
         responsive = {true}
-        parentWidth = {WIDTH}
-        onClick={(area) => {props.onButtonClicked(area)}}
+        imgheight = {3500}
+        parentWidth = {2000}
+        natural = {true}
+        onClick={(area) => {/*props.onButtonClicked(area)*/ console.log(area.name)}}
         />
       </div>
 

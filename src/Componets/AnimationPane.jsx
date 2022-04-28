@@ -23,7 +23,8 @@ const AnimationPane = (props) => {
     }
     useEffect(()=>{
         if(shouldRender){
-            console.log(props.buttonPressed + " yes ");
+            //console.log(props.buttonPressed);
+            //This is redacted for this build but this gets info on buttons if passed in
         }
     })
         return(
