@@ -3,6 +3,7 @@
 const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
 const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main');
+const isDev = require('electron-is-dev');
 setupTitlebar();
 
 function createWindow () {
@@ -23,10 +24,13 @@ function createWindow () {
   })
 
   //load the index.html from a url
-  win.loadURL('http://localhost:3000');
+  win.loadURL(
+    isDev ? 'http://localhost:3000'
+    : `file://${path.join(__dirname, '../build/index.html')}`
+    );
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  //win.webContents.openDevTools()
 
   const menu = null;
   attachTitlebarToWindow(win);
