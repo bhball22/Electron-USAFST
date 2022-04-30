@@ -11,10 +11,10 @@ JS Files can be in the main folder or src depending on scope<br>
 
 # Installing Required tools
 ## Requirement overview:
-- Nodejs 16.13.x or Higher
+- Nodejs 16.13.x or Higher (keep it in node 16 tho)
 - Npm 8.1.x or Higher
-- VSCode 
-- Github Desktop or Github intigration to VSCode
+- VSCode (recomended)
+- Github Desktop | Github intigration to VSCode | Github CLI
  ### Recommended Addons:
 - Prettier
 - Vscode-icons
@@ -38,7 +38,7 @@ JS Files can be in the main folder or src depending on scope<br>
 - Windows - Mac: 
     - Download here https://code.visualstudio.com/ Version does not matter as long as it is the right one for your OS
 - Linux:
-    - This is more involved, just use atom
+    - If you are on linux you prob dont need instructions for this.
 7. Make sure Add to PATH & Register Code as an editor is checked when you get to that point.
 8. Should be Good to go
 
@@ -46,12 +46,12 @@ JS Files can be in the main folder or src depending on scope<br>
 1. Clone The Repository Onto your local drive
 2. Open The Project Folder In VS Code
 3. Open A local Terminal
-4. Run The Command `npm install` (This should Install all programs in the npm module location)
-5. `Npm run Dev` - start the program Note: If you make changes to react you do not need to restart the program. 
+4. Run The Command `yarn install` (This should Install all programs in the npm module location)
+5. `yarn run Dev` - start the program Note: If you make changes to react you do not need to restart the program. 
 6. Ctrl + C - close program (it will ask you if you want to just press y)
 
 ## Opening Branches
-- run `npm install`
+- run `yarn install`
 
 
 # Helpful Websites
